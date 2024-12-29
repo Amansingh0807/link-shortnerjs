@@ -9,7 +9,8 @@ document.getElementById('shorten-btn').addEventListener('click', async function 
 
   try {
     // Use allorigins.win proxy to bypass CORS restrictions
-    const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent('https://api.shrtco.de/v2/shorten?url=' + url)}`);
+const response = await fetch(`https://corsproxy.io/?${encodeURIComponent('https://api.shrtco.de/v2/shorten?url=' + url)}`);
+
 
     if (!response.ok) {
       throw new Error('Failed to shorten the URL. Please try again!');
